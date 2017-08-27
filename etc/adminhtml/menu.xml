@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Thesagaydak_News::news" title="Thesagaydak" module="Thesagaydak_News" sortOrder="51" resource="Thesagaydak_News::news"/>
+        <add id="Thesagaydak_News::post" title="Posts" module="Thesagaydak_News" sortOrder="10" action="thesagaydak_news/post" resource="Thesagaydak_News::post" parent="Thesagaydak_News::news"/>
+    </menu>
+</config>
