@@ -1,6 +1,21 @@
-TEST
-<?php foreach ($this->getModel() as $item): ?>
 
-    <?php echo $item->getId(); ?>
 
-<?php endforeach; ?>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+                    <caption class="text-center">An example of a responsive table based on <a href="https://getbootstrap.com/css/#tables-responsive" target="_blank">Bootstrap</a>:</caption>
+                    <tbody>
+                        <?php foreach ($this->getModel() as $item): ?>
+                            <tr>
+                                <td><a href="<?php echo $item->getId(); ?>"><?php echo $item->getTitle(); ?></a></td>
+                            </tr>
+
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

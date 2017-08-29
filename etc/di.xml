@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <virtualType name="ThesagaydakNewsGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ThesagaydakNewsPostGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Thesagaydak\News\Model\ResourceModel\Post\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">ThesagaydakNewsGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Thesagaydak\News\Model\ResourceModel\Post\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">thesagaydak_news_post</argument>
+            <argument name="eventPrefix" xsi:type="string">thesagaydak_news_post_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">post_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Thesagaydak\News\Model\ResourceModel\Post</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="thesagaydak_news_post_listing_data_source" xsi:type="string">Thesagaydak\News\Model\ResourceModel\Post\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
