@@ -1,5 +1,3 @@
-
-
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
@@ -9,9 +7,8 @@
                     <tbody>
                         <?php foreach ($this->getModel() as $item): ?>
                             <tr>
-                                <td><a href="<?php echo $item->getId(); ?>"><?php echo $item->getTitle(); ?></a></td>
+                                <td><a href="/news/index/post?id=<?php echo $item->getId(); ?>"><?php echo $item->getTitle(); ?></a></td>
                             </tr>
-
                         <?php endforeach; ?>
                     </tbody>
                 </table>

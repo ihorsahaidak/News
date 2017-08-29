@@ -15,7 +15,9 @@
  */
 namespace Thesagaydak\News\Block\Adminhtml;
 
-class Post extends \Magento\Backend\Block\Widget\Grid\Container
+use Magento\Backend\Block\Widget\Grid\Container;
+
+class Post extends Container
 {
     /**
      * constructor

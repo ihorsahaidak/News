@@ -1,7 +1,15 @@
 <?php
 namespace Thesagaydak\News\Model\ResourceModel\Post\Grid;
 
-class Collection extends \Thesagaydak\News\Model\ResourceModel\Post\Collection implements \Magento\Framework\Api\Search\SearchResultInterface
+use Thesagaydak\News\Model\ResourceModel\Post\Collection as ThesagaydakCollection;
+use Magento\Framework\Api\Search\SearchResultInterface;
+use Magento\Framework\Data\Collection\EntityFactoryInterface;
+use Magento\Framework\Data\Collection\Db\FetchStrategyInterface;
+use Magento\Framework\Event\ManagerInterface;
+use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
+use Magento\Framework\Api\SearchCriteriaInterface;
+
+class Collection extends ThesagaydakCollection implements SearchResultInterface
 {
     protected $_aggregations;
 
@@ -21,17 +29,17 @@ class Collection extends \Thesagaydak\News\Model\ResourceModel\Post\Collection i
      * @param \Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource
      */
     public function __construct(
-        \Magento\Framework\Data\Collection\EntityFactoryInterface $entityFactory,
+        EntityFactoryInterface $entityFactory,
         \Psr\Log\LoggerInterface $logger,
-        \Magento\Framework\Data\Collection\Db\FetchStrategyInterface $fetchStrategy,
-        \Magento\Framework\Event\ManagerInterface $eventManager,
+        FetchStrategyInterface $fetchStrategy,
+        ManagerInterface $eventManager,
         $mainTable,
         $eventPrefix,
         $eventObject,
         $resourceModel,
         $model = 'Magento\Framework\View\Element\UiComponent\DataProvider\Document',
         $connection = null,
-        \Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource = null
+        AbstractDb $resource = null
     )
     {
         parent::__construct($entityFactory, $logger, $fetchStrategy, $eventManager, $connection, $resource);
@@ -61,7 +69,7 @@ class Collection extends \Thesagaydak\News\Model\ResourceModel\Post\Collection i
         return null;
     }
 
-    public function setSearchCriteria(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria = null)
+    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria = null)
     {
         return $this;
     }

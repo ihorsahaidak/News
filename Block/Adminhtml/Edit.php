@@ -1,7 +1,11 @@
 <?php
 namespace Thesagaydak\News\Block\Adminhtml\Post;
 
-class Edit extends \Magento\Backend\Block\Widget\Form\Container
+use Magento\Framework\Registry;
+use Magento\Backend\Block\Widget\Context;
+use Magento\Backend\Block\Widget\Form\Container;
+
+class Edit extends Container
 {
     /**
      * Core registry
@@ -17,11 +21,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
      * @param \Magento\Backend\Block\Widget\Context $context
      * @param array $data
      */
-    public function __construct(
-        \Magento\Framework\Registry $coreRegistry,
-        \Magento\Backend\Block\Widget\Context $context,
-        array $data = []
-    )
+    public function __construct(Registry $coreRegistry, Context $context, array $data = [])
     {
         $this->_coreRegistry = $coreRegistry;
         parent::__construct($context, $data);

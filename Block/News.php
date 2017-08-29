@@ -16,7 +16,6 @@ class News extends Template
 
     public function getHelloWorldTxt()
     {
-
         return 'Hello world!';
     }
 
