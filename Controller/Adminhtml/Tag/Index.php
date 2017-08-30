@@ -1,7 +1,11 @@
 <?php
-namespace Thesagaydak\News\Controller\Adminhtml\Post;
+namespace Thesagaydak\News\Controller\Adminhtml\Tag;
 
-class Index extends \Magento\Backend\App\Action
+use Magento\Backend\App\Action;
+use Magento\Framework\View\Result\PageFactory;
+use Magento\Backend\App\Action\Context;
+
+class Index extends Action
 {
     /**
      * Page result factory
@@ -24,8 +28,8 @@ class Index extends \Magento\Backend\App\Action
      * @param \Magento\Backend\App\Action\Context $context
      */
     public function __construct(
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \Magento\Backend\App\Action\Context $context
+        PageFactory $resultPageFactory,
+        Context $context
     )
     {
         $this->_resultPageFactory = $resultPageFactory;
@@ -63,7 +67,7 @@ class Index extends \Magento\Backend\App\Action
     {
         $resultPage = $this->getResultPage();
 
-        $resultPage->getConfig()->getTitle()->prepend((__('Posts')));
+        $resultPage->getConfig()->getTitle()->prepend((__('Tags')));
         return $this;
     }
 }

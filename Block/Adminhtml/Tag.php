@@ -17,7 +17,7 @@ namespace Thesagaydak\News\Block\Adminhtml;
 
 use Magento\Backend\Block\Widget\Grid\Container;
 
-class Post extends Container
+class Tag extends Container
 {
     /**
      * constructor
@@ -26,10 +26,10 @@ class Post extends Container
      */
     protected function _construct()
     {
-        $this->_controller = 'adminhtml_post';
+        $this->_controller = 'adminhtml_tag';
         $this->_blockGroup = 'Thesagaydak_News';
-        $this->_headerText = __('Posts');
-        $this->_addButtonLabel = __('Create New Post');
+        $this->_headerText = __('Tags');
+        $this->_addButtonLabel = __('Create New Tag');
         parent::_construct();
     }
 }

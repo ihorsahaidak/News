@@ -13,7 +13,7 @@
             </action>
         </referenceBlock>
         <referenceContainer name="content">
-            <uiComponent name="thesagaydak_news_post_listing"/>
+            <uiComponent name="thesagaydak_news_tag_listing"/>
         </referenceContainer>
     </body>
 </page>

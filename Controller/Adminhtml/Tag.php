@@ -3,12 +3,12 @@
 namespace Thesagaydak\News\Controller\Adminhtml;
 
 use Magento\Backend\App\Action;
-use Thesagaydak\News\Model\Tag as ThesagaydakPost;
+use Thesagaydak\News\Model\Tag as ThesagaydakTag;
 use Magento\Framework\Registry;
 use Magento\Backend\Model\View\Result\RedirectFactory;
 use Magento\Backend\App\Action\Context;
 
-abstract class Post extends Action
+abstract class Tag extends Action
 {
     protected $_postFactory;
 
@@ -17,7 +17,7 @@ abstract class Post extends Action
     protected $_resultRedirectFactory;
 
     public function __construct(
-        ThesagaydakPost $postFactory,
+        ThesagaydakTag $postFactory,
         Registry $coreRegistry,
         RedirectFactory $resultRedirectFactory,
         Context $context
@@ -36,7 +36,7 @@ abstract class Post extends Action
         if ($postId) {
             $post->load($postId);
         }
-        $this->_coreRegistry->register('thesagaydak_news_post', $post);
+        $this->_coreRegistry->register('thesagaydak_news_tag', $post);
         return $post;
     }
 }

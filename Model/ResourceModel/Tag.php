@@ -5,7 +5,7 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 use Magento\Framework\Stdlib\DateTime\DateTime;
 use Magento\Framework\Model\ResourceModel\Db\Context;
 
-class Post extends AbstractDb
+class Tag extends AbstractDb
 {
     /**
      * Date model
@@ -31,6 +31,6 @@ class Post extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('thesagaydak_news_post', 'id');
+        $this->_init('thesagaydak_news_tag', 'id');
     }
 }

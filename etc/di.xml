@@ -29,4 +29,29 @@
             </argument>
         </arguments>
     </type>
+
+
+
+
+    <virtualType name="ThesagaydakNewsTagGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Thesagaydak\News\Model\ResourceModel\Tag\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">ThesagaydakNewsGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Thesagaydak\News\Model\ResourceModel\Tag\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">thesagaydak_news_tag</argument>
+            <argument name="eventPrefix" xsi:type="string">thesagaydak_news_tag_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">tag_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Thesagaydak\News\Model\ResourceModel\Tag</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="thesagaydak_news_tag_listing_data_source" xsi:type="string">Thesagaydak\News\Model\ResourceModel\Tag\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

@@ -1,7 +1,7 @@
 <?php
-namespace Thesagaydak\News\Model\ResourceModel\Post\Grid;
+namespace Thesagaydak\News\Model\ResourceModel\Tag\Grid;
 
-use Thesagaydak\News\Model\ResourceModel\Post\Collection as ThesagaydakCollection;
+use Thesagaydak\News\Model\ResourceModel\Tag\Collection as ThesagaydakCollection;
 use Magento\Framework\Api\Search\SearchResultInterface;
 use Magento\Framework\Data\Collection\EntityFactoryInterface;
 use Magento\Framework\Data\Collection\Db\FetchStrategyInterface;

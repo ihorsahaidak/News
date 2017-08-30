@@ -19,8 +19,8 @@
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">ThesagaydakNewsPostGridDataProvider</argument>
             <argument name="name" xsi:type="string">thesagaydak_news_post_listing_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">post_id</argument>
-            <argument name="requestFieldName" xsi:type="string">post_id</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="update_url" xsi:type="url" path="mui/index/render"/>

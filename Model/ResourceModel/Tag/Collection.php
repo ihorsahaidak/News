@@ -1,5 +1,5 @@
 <?php
-namespace Thesagaydak\News\Model\ResourceModel\Post;
+namespace Thesagaydak\News\Model\ResourceModel\Tag;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
@@ -17,14 +17,14 @@ class Collection extends AbstractCollection
      *
      * @var string
      */
-    protected $_eventPrefix = 'thesagaydak_news_post_collection';
+    protected $_eventPrefix = 'thesagaydak_news_tag_collection';
 
     /**
      * Event object
      *
      * @var string
      */
-    protected $_eventObject = 'post_collection';
+    protected $_eventObject = 'tag_collection';
 
     /**
      * Define resource model
@@ -33,7 +33,7 @@ class Collection extends AbstractCollection
      */
     protected function _construct()
     {
-        $this->_init('Thesagaydak\News\Model\Post', 'Thesagaydak\News\Model\ResourceModel\Post');
+        $this->_init('Thesagaydak\News\Model\Tag', 'Thesagaydak\News\Model\ResourceModel\Tag');
     }
 
     /**
@@ -54,7 +54,7 @@ class Collection extends AbstractCollection
      * @param array $additional
      * @return array
      */
-    protected function _toOptionArray($valueField = 'id', $labelField = 'name', $additional = [])
+    protected function _toOptionArray($valueField = 'id', $labelField = 'title', $additional = [])
     {
         return parent::_toOptionArray($valueField, $labelField, $additional);
     }

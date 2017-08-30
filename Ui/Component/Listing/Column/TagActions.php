@@ -6,21 +6,21 @@ use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
-class PostActions extends Column
+class TagActions extends Column
 {
     /**
      * Url path  to edit
      *
      * @var string
      */
-    const URL_PATH_EDIT = 'thesagaydak_news/post/edit';
+    const URL_PATH_EDIT = 'thesagaydak_news/tag/edit';
 
     /**
      * Url path  to delete
      *
      * @var string
      */
-    const URL_PATH_DELETE = 'thesagaydak_news/post/delete';
+    const URL_PATH_DELETE = 'thesagaydak_news/tag/delete';
 
     /**
      * URL builder
@@ -39,8 +39,8 @@ class PostActions extends Column
      * @param array $data
      */
     public function __construct(UrlInterface $urlBuilder, ContextInterface $context, UiComponentFactory $uiComponentFactory,
-        array $components = [],
-        array $data = []
+                                array $components = [],
+                                array $data = []
     )
     {
         $this->_urlBuilder = $urlBuilder;

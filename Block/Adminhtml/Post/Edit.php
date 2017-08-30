@@ -1,11 +1,7 @@
 <?php
 namespace Thesagaydak\News\Block\Adminhtml\Post;
 
-use Magento\Framework\Registry;
-use Magento\Backend\Block\Widget\Context;
-use Magento\Backend\Block\Widget\Form\Container;
-
-class Edit extends Container
+class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
     /**
      * Core registry
@@ -21,7 +17,11 @@ class Edit extends Container
      * @param \Magento\Backend\Block\Widget\Context $context
      * @param array $data
      */
-    public function __construct(Registry $coreRegistry, Context $context, array $data = [])
+    public function __construct(
+        \Magento\Framework\Registry $coreRegistry,
+        \Magento\Backend\Block\Widget\Context $context,
+        array $data = []
+    )
     {
         $this->_coreRegistry = $coreRegistry;
         parent::__construct($context, $data);
@@ -35,7 +35,7 @@ class Edit extends Container
     protected function _construct()
     {
         $this->_objectId = 'post_id';
-        $this->_blockGroup = 'Mageplaza_HelloWorld';
+        $this->_blockGroup = 'Thesagaydak_News';
         $this->_controller = 'adminhtml_post';
         parent::_construct();
         $this->buttonList->update('save', 'label', __('Save Post'));
