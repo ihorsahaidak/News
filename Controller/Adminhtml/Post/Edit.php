@@ -1,6 +1,8 @@
 <?php
 namespace Thesagaydak\News\Controller\Adminhtml\Post;
 
+use Thesagaydak\News\Model\PostFactory;
+
 class Edit extends \Thesagaydak\News\Controller\Adminhtml\Post
 {
     /**
@@ -24,12 +26,11 @@ class Edit extends \Thesagaydak\News\Controller\Adminhtml\Post
      */
     protected $_resultJsonFactory;
 
-
     public function __construct(
         \Magento\Backend\Model\Session $backendSession,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
-        \Thesagaydak\News\Model\Post $postFactory,
+        PostFactory $postFactory,
         \Magento\Framework\Registry $registry,
         \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\Action\Context $context
@@ -67,7 +68,6 @@ class Edit extends \Thesagaydak\News\Controller\Adminhtml\Post
                 $this->messageManager->addError(__('This Post no longer exists.'));
                 $resultRedirect = $this->_resultRedirectFactory->create();
                 $resultRedirect->setPath(
-                    'thesagaydak_news/*/edit',
                     [
                         'id' => $post->getId(),
                         '_current' => true
@@ -82,6 +82,8 @@ class Edit extends \Thesagaydak\News\Controller\Adminhtml\Post
         if (!empty($data)) {
             $post->setData($data);
         }
+
+
         return $resultPage;
     }
 }

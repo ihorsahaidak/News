@@ -69,9 +69,9 @@ class Post extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
         );
         if ($post->getId()) {
             $fieldset->addField(
-                'post_id',
+                'id',
                 'hidden',
-                ['name' => 'post_id']
+                ['name' => 'id']
             );
         }
 

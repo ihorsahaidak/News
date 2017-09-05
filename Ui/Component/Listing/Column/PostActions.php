@@ -77,8 +77,8 @@ class PostActions extends Column
                             ),
                             'label' => __('Delete'),
                             'confirm' => [
-                                'title' => __('Delete "${ $.$data.name }"'),
-                                'message' => __('Are you sure you wan\'t to delete the Post "${ $.$data.name }" ?')
+                                'title' => __('Delete "${ $.$data.title }"'),
+                                'message' => __('Are you sure you wan\'t to delete the Post "${ $.$data.title }" ?')
                             ]
                         ]
                     ];

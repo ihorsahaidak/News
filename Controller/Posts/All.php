@@ -1,11 +1,11 @@
 <?php
-namespace Thesagaydak\News\Controller\Index;
+namespace Thesagaydak\News\Controller\Posts;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
-class Index extends Action
+class All extends Action
 {
     protected $_resultPageFactory;
 

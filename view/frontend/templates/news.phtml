@@ -4,19 +4,21 @@
         margin: 5px 10px;
         padding: 3px 6px;
         border: solid 1px #444;
-        color: #444;
     }
     .tag_block:hover{
         text-decoration: none;
         background: #eee;
         border: solid 1px #777;
     }
+    .tags_cloud{
+        padding-bottom: 50px;
+    }
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 tags_cloud">
                 <?php foreach ($this->getTags() as $item): ?>
-                        <a href="" class="tag_block"><?php echo $item->getTitle() ?></a>
+                        <a <?= isset($_GET['with-tag']) ? $_GET['with-tag'] == $item->getId() ? 'style="background: #555; color: #fff"' : 'style="color: #444"' : '' ?> href="" class="tag_block"> <?php echo $item->getTitle() ?> </a>
                 <?php endforeach; ?>
 
         </div>
@@ -27,14 +29,11 @@
                     <tbody>
                         <?php foreach ($this->getPosts() as $item): ?>
                             <tr>
-                                <td><a href="/news/index/post?id=<?php echo $item->getId(); ?>"><?php echo $item->getTitle(); ?></a></td>
+                                <td><a href="<?= $item->getPostLink(); ?>"><?php echo $item->getTitle(); ?></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-
-
-
             </div>
         </div>
     </div>

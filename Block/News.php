@@ -31,6 +31,10 @@ class News extends Template
     public function getPosts()
     {
         $posts_collection = $this->model->getCollection();
+        if(!empty($_GET['with-tag'])){
+            $posts_collection->addFieldToFilter('tags', $_GET['with-tag']);
+        }
+        //$giftColletion->setOrder('position','ASC');
         return $posts_collection;
     }
 
