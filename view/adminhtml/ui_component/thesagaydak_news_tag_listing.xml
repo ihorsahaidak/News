@@ -140,7 +140,6 @@
                 </item>
             </argument>
         </column>
-
         <actionsColumn name="actions" class="Thesagaydak\News\Ui\Component\Listing\Column\TagActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

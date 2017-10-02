@@ -3,7 +3,7 @@
 namespace Thesagaydak\News\Controller\Adminhtml;
 
 use Magento\Backend\App\Action;
-use Thesagaydak\News\Model\Tag as ThesagaydakPost;
+use Thesagaydak\News\Model\PostFactory as ThesagaydakPost;
 use Magento\Framework\Registry;
 use Magento\Backend\Model\View\Result\RedirectFactory;
 use Magento\Backend\App\Action\Context;

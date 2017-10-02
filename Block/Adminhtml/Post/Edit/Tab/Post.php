@@ -70,10 +70,56 @@ class Post extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
         if ($post->getId()) {
             $fieldset->addField(
                 'id',
-                'hidden',
-                ['name' => 'id']
+                'text',
+                [
+                    'label'     => 'ID',
+                    'readonly' => true,
+                    'name'      => 'id',
+                ]
             );
         }
+
+        if ($post->getTitle()) {
+            $fieldset->addField(
+                'title',
+                'text',
+                [
+                    'label' =>  'Title',
+                    'name'  =>  'title'
+                ]
+            );
+        }
+
+        $fieldset->addField(
+            'status',
+            'select',
+            [
+                'label' =>  'Status',
+                'name'  => 'status',
+                'values' => [
+                    [
+                        'label' => 'Active',
+                        'value' => '1'
+                    ],
+                    [
+                        'label' => 'Not active',
+                        'value' => '0'
+                    ]
+                ]
+            ]
+        );
+
+        if ($post->getTitle()) {
+            $fieldset->addField(
+                'content',
+                'textarea',
+                [
+                    'label' =>  'Content',
+                    'name'  =>  'content'
+                ]
+            );
+        }
+
 
         $postData = $this->_session->getData('thesagaydak_news_post_data', true);
         if ($postData) {

@@ -47,11 +47,15 @@ class Post extends AbstractModel
         return [self::CACHE_TAG . '_' . $this->getId()];
     }
 
-
     public function getPostLink()
     {
         $values = '/news/post/view/id/' . $this->getData('id');
+        return $values;
+    }
 
+    public function getDefaultValues()
+    {
+        $values = [];
         return $values;
     }
 }

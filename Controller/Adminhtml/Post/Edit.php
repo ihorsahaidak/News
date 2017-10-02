@@ -30,7 +30,7 @@ class Edit extends \Thesagaydak\News\Controller\Adminhtml\Post
         \Magento\Backend\Model\Session $backendSession,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
-        PostFactory $postFactory,
+        \Thesagaydak\News\Model\PostFactory $postFactory,
         \Magento\Framework\Registry $registry,
         \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\Action\Context $context

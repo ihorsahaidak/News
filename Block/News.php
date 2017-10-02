@@ -30,9 +30,11 @@ class News extends Template
      */
     public function getPosts()
     {
+        $param = $this->getRequest()->getParam('tag');
+
         $posts_collection = $this->model->getCollection();
-        if(!empty($_GET['with-tag'])){
-            $posts_collection->addFieldToFilter('tags', $_GET['with-tag']);
+        if(!empty($param)){
+            $posts_collection->addFieldToFilter('tags', $param);
         }
         //$giftColletion->setOrder('position','ASC');
         return $posts_collection;
@@ -47,5 +49,14 @@ class News extends Template
     {
         $tags_collection = $this->tag_model->getCollection();
         return $tags_collection;
+    }
+
+    public function getTagUrl($param)
+    {
+        $request_params = $this->getRequest()->getParams();
+        if(in_array($param, $request_params)) {
+            return '';
+        }
+        return $this->getUrl('news/posts/all') . 'tag' . '/' . $param;
     }
 }

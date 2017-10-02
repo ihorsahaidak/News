@@ -4,6 +4,7 @@
         margin: 5px 10px;
         padding: 3px 6px;
         border: solid 1px #444;
+        color: #0A0A0A;
     }
     .tag_block:hover{
         text-decoration: none;
@@ -18,10 +19,18 @@
     <div class="row">
         <div class="col-md-12 tags_cloud">
                 <?php foreach ($this->getTags() as $item): ?>
-                        <a <?= isset($_GET['with-tag']) ? $_GET['with-tag'] == $item->getId() ? 'style="background: #555; color: #fff"' : 'style="color: #444"' : '' ?> href="" class="tag_block"> <?php echo $item->getTitle() ?> </a>
+                        <a <?php if (empty($this->getTagUrl($item->getId()))): ?> style="background: rosybrown; color: white" <?php endif; ?>
+                                href="<?php echo empty($this->getTagUrl($item->getId())) ? $this->getUrl('news/posts/all') : $this->getTagUrl($item->getId()); ?>" class="tag_block">
+                            <?php echo $item->getTitle() ?>
+                        </a>
                 <?php endforeach; ?>
-
+            <br>
+            <br>
+            <a href="" class="tag_block">A-Z</a>
+            <a href="" class="tag_block">Z-A</a>
         </div>
+
+        <?php var_dump($this->getSample()) ?>
         <div class="col-xs-12">
             <div class="table-responsive">
                 <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
@@ -30,6 +39,9 @@
                         <?php foreach ($this->getPosts() as $item): ?>
                             <tr>
                                 <td><a href="<?= $item->getPostLink(); ?>"><?php echo $item->getTitle(); ?></a></td>
+                                <td>
+                                    <?php echo $item->getTags(); ?>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
